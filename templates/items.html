@@ -1,0 +1,21 @@
+<form id="new__item__form">
+  <div class="mb-3 row-sm-3 col-sm-3">
+    <input class="border border-secondary form-control" type="text" name="item_name" placeholder="Name" />
+  </div>
+  <div class="mb-3 row-sm-3 col-sm-3">
+    <textarea class="border border-secondary form-control" type="textarea" name="item_description"
+      placeholder="Description"></textarea>
+  </div>
+</form>
+
+<input class="btn btn-outline-primary" type="submit" value="Add" onclick="submitNewItemForm()" />
+
+
+{% for index, item in enumerated_items %}
+<div class="card start-50 translate-middle" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title text-primary">{{ item.id }}. {{ item.name }}</h5>
+    <p class="card-text text-secondary">{{ item.description }}</p>
+  </div>
+</div>
+{% endfor %}
